@@ -45,10 +45,11 @@ const Spotify = {
           //if there are no tracks in the response
           return [];
         }
+        console.log(jsonResponse);
         return jsonResponse.tracks.items.map((track) => ({
           id: track.id,
           name: track.name,
-          artist: track.artist,
+          artist: track.artists[0].name,
           album: track.album.name,
           uri: track.uri,
         }));
